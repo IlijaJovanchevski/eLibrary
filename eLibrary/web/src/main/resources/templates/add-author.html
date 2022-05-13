@@ -1,0 +1,39 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">eLibrary Author</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <form th:action="@{'/authors/{id}' (id=${author?.getId()})}" th:method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               th:value="${author?.getName()}"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="residency">Country of origin</label>
+                        <input type="text"
+                               class="form-control"
+                               id="residency"
+                               name="residency"
+                               th:value="${author?.getResidency()}"
+                               required>
+                    </div>
+
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                    <a id="back" href="/authors" type="button" class="btn btn-primary">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</th:block>
